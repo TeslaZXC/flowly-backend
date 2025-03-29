@@ -6,21 +6,32 @@ export const register = async (req, res) => {
   const { username, password } = req.body;
 
   try {
-    const existingUser = await findUserByUsername(username);
-    if (existingUser.length > 0) {
-      return res.status(409).json({ message: 'Пользователь с таким логином уже существует' });
-    }
-
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    createUser(username, hashedPassword, (err, result) => {
+    // Check if the username already exists
+    findUserByUsername(username, async (err, results) => {
       if (err) {
-        console.error('Registration Error: ', err);
-        return res.status(500).json({ message: 'Ошибка регистрации. Пожалуйста, попробуйте позже.' });
+        console.error('Database Error: ', err);
+        return res.status(500).json({ message: 'Ошибка сервера. Пожалуйста, попробуйте позже.' });
       }
 
-      const token = generateToken({ id: result.insertId, username });
-      res.status(201).json({ token });
+      // If user exists, return an error
+      if (results && results.length > 0) {
+        return res.status(409).json({ message: 'Пользователь с таким логином уже существует' });
+      }
+
+      // Hash the password before saving
+      const hashedPassword = await bcrypt.hash(password, 10);
+
+      // Create the new user
+      createUser(username, hashedPassword, (err, result) => {
+        if (err) {
+          console.error('Registration Error: ', err);
+          return res.status(500).json({ message: 'Ошибка регистрации. Пожалуйста, попробуйте позже.' });
+        }
+
+        // Generate token after successful registration
+        const token = generateToken({ id: result.insertId, username });
+        res.status(201).json({ token });
+      });
     });
   } catch (error) {
     console.error('Error in register: ', error);

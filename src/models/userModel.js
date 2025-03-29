@@ -7,5 +7,10 @@ export const createUser = (username, password, callback) => {
 
 export const findUserByUsername = (username, callback) => {
   const query = 'SELECT * FROM users WHERE username = ?';
-  db.query(query, [username], callback);
+  db.query(query, [username], (err, results) => {
+    if (err) {
+      return callback(err, null); 
+    }
+    callback(null, results); 
+  });
 };
