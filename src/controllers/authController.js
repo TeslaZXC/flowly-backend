@@ -3,7 +3,7 @@ import { createUser, findUserByUsername } from '../models/userModel.js';
 import { generateToken } from '../utils/jwtUtils.js';
 
 export const register = async (req, res) => {
-  const { username, password, personalInfo } = req.body;
+  const { username, password } = req.body;
 
   try {
     const existingUser = await findUserByUsername(username);
@@ -13,13 +13,13 @@ export const register = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    createUser(username, hashedPassword, personalInfo, (err, result) => {
+    createUser(username, hashedPassword, (err, result) => {
       if (err) {
         console.error('Registration Error: ', err);
         return res.status(500).json({ message: 'Ошибка регистрации. Пожалуйста, попробуйте позже.' });
       }
 
-      const token = generateToken({ id: result.insertId, username, personal_info: personalInfo });
+      const token = generateToken({ id: result.insertId, username });
       res.status(201).json({ token });
     });
   } catch (error) {
