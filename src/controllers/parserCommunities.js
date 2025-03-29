@@ -28,6 +28,7 @@ export const parserCommunities = async (req, res) => {
     console.log(`Название сообщества: ${nameCommunity}`);
     console.log(`Описание сообщества: ${description}`);
 
+    // Первый запрос на локальный сервер для получения категории
     const serverResponse = await axios.post("http://localhost:3000/chat", {
       promt: description, 
     });
@@ -47,17 +48,19 @@ export const parserCommunities = async (req, res) => {
     }
 
     console.log(`Найденная категория: ${category.name}, ID: ${category.id}`);
+
+    // Отправляем собранную информацию
     res.json({
       name: nameCommunity,
       subscribers,
       avatar,
       description,
       category: category.name,
-      categoryId: category.id, 
+      categoryId: category.id,
       categoryLink: category.link,
     });
   } catch (error) {
-    console.error("Ошибка парсинга:", error.message);
+    console.error("Ошибка при парсинге:", error.message);
     res.status(500).json({ error: "Ошибка при парсинге данных" });
   }
 };

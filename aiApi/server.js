@@ -79,7 +79,7 @@ app.post("/chat", ensureAccessToken, async (req, res) => {
 
     let fullText = response.data.choices[0].message.content.trim();
 
-    res.json({ response: fullText }); // Возвращаем ответ сервера
+    res.json({ response: fullText }); 
   } catch (error) {
     if (error.response?.status === 401) {
       console.log("Токен истек, обновляем...");
