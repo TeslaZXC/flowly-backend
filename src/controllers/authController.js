@@ -24,7 +24,7 @@ export const register = async (req, res) => {
     });
   } catch (error) {
     console.error('Error in register: ', error);
-    res.status(400).json({ message: 'Ошибка сервера. Пожалуйста, попробуйте позже.' });
+    res.status(404).json({ message: 'Ошибка сервера. Пожалуйста, попробуйте позже.' });
   }
 };
 
