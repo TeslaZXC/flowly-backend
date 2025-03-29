@@ -1,0 +1,26 @@
+export const categories = [
+    { id: 1, name: "Наука", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=7&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 2, name: "Культура", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=8&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 3, name: "Спорт", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=2&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 4, name: "Музыка", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=3&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 5, name: "Блогеры", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=5&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 6, name: "Радио и телевидение", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=9&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 7, name: "Арт", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=4&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 8, name: "Игры и киберспорт", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=10&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 9, name: "Мода и красота", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=12&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 10, name: "Благотворительность", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=15&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 11, name: "Бренды", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=6&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 12, name: "Живопись", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=17&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 13, name: "Кулинария", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=18&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 14, name: "Путешествия", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=19&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 15, name: "Рыбалка", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=20&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 16, name: "Здоровье", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=21&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 17, name: "Животные", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=22&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 18, name: "Юмор", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=23&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 19, name: "IT и гаджеты", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=24&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 20, name: "NFT и Web 3.0", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=32&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 21, name: "Красота и стиль", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=25&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 22, name: "Родительство", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=26&c%5Bper_page%5D=40&c%5Bsection%5D=communities" },
+    { id: 23, name: "Дом и сад", link: "https://vk.com/groups?act=catalog&c%5Bcategory%5D=31&c%5Bper_page%5D=40&c%5Bsection%5D=communities" }
+  ];
+  
